@@ -26,8 +26,8 @@ app.get("/api/v1/distance/:from/:to", (req, res) => {
   try {
     // Städte finden
 
-    const from = req.params.from;
-    const to = req.params.to;
+    const from = req.params.from.toUpperCase();
+    const to = req.params.to.toUpperCase();
 
     const filteredFirstCity = data.filter((city) => city.DS100 === from);
     const filteredSecondCity = data.filter((city) => city.DS100 === to);
